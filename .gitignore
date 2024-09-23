@@ -25,3 +25,4 @@ devenv.local.nix
 /.env
 /.nix-hex
 /.nix-mix
+/assets/node_modules
