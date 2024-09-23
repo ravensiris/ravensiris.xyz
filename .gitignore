@@ -1,3 +1,6 @@
+# elixir
+/priv/static/
+/.elixir-tools
 /_build
 /cover
 /deps
@@ -19,8 +22,6 @@ devenv.local.nix
 .pre-commit-config.yaml
 
 # localized elixir
-/.elixir_ls
 /.env
 /.nix-hex
 /.nix-mix
-/.elixir-tools
