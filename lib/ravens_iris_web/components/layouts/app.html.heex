@@ -1,32 +1,48 @@
-<header class="px-4 sm:px-6 lg:px-8">
-  <div class="flex items-center justify-between border-b border-zinc-100 py-3 text-sm">
-    <div class="flex items-center gap-4">
-      <a href="/">
-        <img src={~p"/images/logo.svg"} width="36" />
-      </a>
-      <p class="bg-brand/5 text-brand rounded-full px-2 font-medium leading-6">
-        v<%= Application.spec(:phoenix, :vsn) %>
-      </p>
-    </div>
-    <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-      <a href="https://twitter.com/elixirphoenix" class="hover:text-zinc-700">
-        @elixirphoenix
-      </a>
-      <a href="https://github.com/phoenixframework/phoenix" class="hover:text-zinc-700">
-        GitHub
+<.flash_group flash={@flash} />
+
+<header class="px-4 lg:px-6 h-14 flex items-center border-b border-gray-200 dark:border-gray-700">
+  <a href="#" class="flex items-center justify-center">
+    <i data-lucide="cpu" class="h-6 w-6 text-primary-light dark:text-primary-dark"></i>
+    <span class="ml-2 text-lg font-bold text-gray-900 dark:text-white">ElixirDev</span>
+  </a>
+  <nav class="ml-auto flex gap-4 sm:gap-6">
+    <a href="#about" class="text-sm font-medium hover:underline underline-offset-4">About</a>
+    <a href="#projects" class="text-sm font-medium hover:underline underline-offset-4">
+      Projects
+    </a>
+    <a href="#contact" class="text-sm font-medium hover:underline underline-offset-4">Contact</a>
+  </nav>
+</header>
+<main class="flex-1">
+  <%= @inner_content %>
+</main>
+<footer class="w-full py-6 px-4 md:px-6 border-t border-gray-200 dark:border-gray-700">
+  <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+    <p class="text-xs text-gray-500 dark:text-gray-400 mb-4 sm:mb-0">
+      © 2024 ElixirDev. All rights reserved.
+    </p>
+    <nav class="flex gap-4">
+      <a
+        href="#"
+        class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+      >
+        <i data-lucide="github" class="h-5 w-5"></i>
+        <span class="sr-only">GitHub</span>
       </a>
       <a
-        href="https://hexdocs.pm/phoenix/overview.html"
-        class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80"
+        href="#"
+        class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
       >
-        Get Started <span aria-hidden="true">&rarr;</span>
+        <i data-lucide="linkedin" class="h-5 w-5"></i>
+        <span class="sr-only">LinkedIn</span>
       </a>
-    </div>
+      <a
+        href="#"
+        class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+      >
+        <i data-lucide="mail" class="h-5 w-5"></i>
+        <span class="sr-only">Email</span>
+      </a>
+    </nav>
   </div>
-</header>
-<main class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-2xl">
-    <.flash_group flash={@flash} />
-    <%= @inner_content %>
-  </div>
-</main>
+</footer>

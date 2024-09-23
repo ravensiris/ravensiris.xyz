@@ -22,6 +22,21 @@ import {Socket} from "phoenix"
 import {LiveSocket} from "phoenix_live_view"
 import topbar from "../vendor/topbar"
 
+// Add icons
+import { createIcons, Cpu, Code2, Terminal, Github, Linkedin, Mail } from 'lucide';
+
+createIcons({
+    icons: {
+        Cpu,
+        Code2,
+        Terminal,
+        Github,
+        Linkedin,
+        Mail
+    }
+});
+
+
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {
   longPollFallbackMs: 2500,

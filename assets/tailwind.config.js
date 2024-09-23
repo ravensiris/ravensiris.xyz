@@ -14,8 +14,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: "#FD4F00",
-      }
+        primary: {
+            light: '#9333ea',
+            dark: '#a855f7'
+        },
+      },
     },
   },
   plugins: [
