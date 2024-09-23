@@ -8,3 +8,19 @@ erl_crash.dump
 *.beam
 /config/*.secret.exs
 .elixir_ls/
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+
+# localized elixir
+/.elixir_ls
+/.env
+/.nix-hex
+/.nix-mix
+/.elixir-tools
