@@ -115,6 +115,8 @@
                   # even though we set `RELEASE_DISTRIBUTION=none` so the cookie should be unused.
                   # Thus, make a random one, which should then be ignored.
                   export RELEASE_COOKIE=$(tr -dc A-Za-z0-9 < /dev/urandom | head -c 20)
+                  export SECRET_KEY_BASE="$(< $CREDENTIALS_DIRECTORY/SECRET_KEY_BASE )"
+                  export DATABASE_URL="$(< $CREDENTIALS_DIRECTORY/DATABASE_URL )"
 
                   ${default}/bin/migrate
                   ${default}/bin/server
@@ -123,11 +125,14 @@
                   User = user;
                   WorkingDirectory = "${dataDir}";
                   Group = user;
+                  LoadCredential = [
+                    "SECRET_KEY_BASE:${cfg.secretKeyBaseFile}"
+                    "DATABASE_URL:${cfg.databaseUrlFile}"
+                  ];
                 };
 
                 environment = {
                   SECRET_KEY_BASE_FILE = cfg.secretKeyBaseFile;
-                  DATABASE_URL_FILE = cfg.databaseUrlFile;
                   HOSTNAME = cfg.host;
                   # Disable Erlang's distributed features
                   RELEASE_DISTRIBUTION = "none";
