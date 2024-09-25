@@ -132,8 +132,7 @@
                 };
 
                 environment = {
-                  SECRET_KEY_BASE_FILE = cfg.secretKeyBaseFile;
-                  HOSTNAME = cfg.host;
+                  PHX_HOST = cfg.host;
                   # Disable Erlang's distributed features
                   RELEASE_DISTRIBUTION = "none";
                   # Additional safeguard, in case `RELEASE_DISTRIBUTION=none` ever
