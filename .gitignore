@@ -26,3 +26,6 @@ devenv.local.nix
 /.nix-hex
 /.nix-mix
 /assets/node_modules
+
+# nix build
+/result
