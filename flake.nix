@@ -71,7 +71,7 @@
           options.services.ravensiris-web = {
             enable = lib.mkEnableOption "ravensiris-web";
             port = lib.mkOption {
-              type = lib.types.int;
+              type = lib.types.port;
               default = 4000;
               description = "Port to listen on, 4000 by default";
             };
@@ -141,6 +141,7 @@
                   ERL_EPMD_ADDRESS = "127.0.0.1";
                   # Home is needed to connect to the node with iex
                   HOME = "${dataDir}";
+                  PORT = toString cfg.port;
                 };
               };
             };
