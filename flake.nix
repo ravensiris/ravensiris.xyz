@@ -29,7 +29,7 @@
         mixFodDeps = erlangPackages.fetchMixDeps {
           inherit version src;
           pname = "ri-elixir-deps";
-          sha256 = "sha256-XVbCVLmiZfXlpK1l2z/0uCULWfpmwVy2Wn86TbFYI0c=";
+          sha256 = "sha256-8aSihmaxNOadMl7+0y38B+9ahh0zNowScwvGe0npdPw=";
         };
         translatedPlatform =
           {
