@@ -96,8 +96,6 @@
               }
             ];
 
-            environment.systemPackages = [default];
-
             users.users.${user} = {
               isSystemUser = true;
               group = user;
