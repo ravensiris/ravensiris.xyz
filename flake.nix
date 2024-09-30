@@ -20,7 +20,7 @@
       erl = pkgs.beam.interpreters.erlang_27;
       erlangPackages = pkgs.beam.packagesWith erl;
       elixir = erlangPackages.elixir;
-      npm2nix = import npmlock2nix {pkgs = pkgs;};
+      npm2nix = pkgs.callPackage npmlock2nix {};
       nodejs = pkgs.nodejs_22;
     in {
       packages = let
