@@ -16,7 +16,8 @@
     npmlock2nix,
   }:
     flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
+      fixnpm2nix = final: prev: {nodejs-16_x = prev.nodePackages.nodejs;};
+      pkgs = nixpkgs.legacyPackages.${system}.extend fixnpm2nix;
       erl = pkgs.beam.interpreters.erlang_27;
       erlangPackages = pkgs.beam.packagesWith erl;
       elixir = erlangPackages.elixir;
